@@ -23,7 +23,7 @@ func Wrap(bytes []byte) *Buffer {
 	return &Buffer{bytes, 0, binary.BigEndian}
 }
 
-//Returns a new buffer who's limit is the index of this current buffer
+//Flip returns a new buffer who's limit is the index of this current buffer
 func (b *Buffer) Flip() *Buffer {
 	return &Buffer{b.data[:b.index], 0, b.order}
 }
@@ -32,7 +32,7 @@ func (b *Buffer) Clear() {
 	b.index = 0
 }
 
-// Returns a new buffer using the same backing slice,
+// Duplicate returns a new buffer using the same backing slice,
 // but with an independant index and byte order
 func (b *Buffer) Duplicate() *Buffer {
 	return &Buffer{b.data, b.index, b.order}

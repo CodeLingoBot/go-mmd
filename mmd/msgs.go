@@ -45,7 +45,10 @@ type AuthToken UUID
 // Typesafe enum
 type ChannelType int
 
-/*type MMDMessage interface {
+/*
+	Encode(buffer *bytes.Buffer)
+}
+*/type MMDMessage interface {
 	Encode(buffer *bytes.Buffer)
 }
 */
